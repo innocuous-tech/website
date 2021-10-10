@@ -1,26 +1,17 @@
 import type * as Stitches from '@stitches/react';
 import { createStitches, CSS as StitchesCSS } from '@stitches/react';
+import { mintDark, orangeDark, plumDark, purpleDark, redDark, slateDark } from '@radix-ui/colors';
 
 export const { config, createTheme, css, getCssText, globalCss, styled, theme } = createStitches({
   theme: {
     colors: {
-      BrandGreen: 'hsla(175,22%,55%,1)',
-      BrandYellow: 'hsla(50,100%,50%,1)',
-      CapsuleBlue500: 'hsla(211, 76%, 24%, 1)',
-      CapsuleBlue900: 'hsla(215, 53%, 23%, 1)',
-      CapsuleGray100: 'hsla(210,8%,80%,1)',
-      CapsuleGray300: 'hsla(218,11%,61%,1)',
-      CapsuleGray500: 'hsla(212,8%,47%,1)',
-      CapsuleGreen000: 'hsla(180,23%,95%,1)',
-      CapsuleGreen100: 'hsla(171,25%,90%,1)',
-      CapsuleGreen500: 'hsla(175,23%,67%,1)',
-      CapsuleGreen600: 'hsla(172,100%,26%,1)',
-      CapsuleGreen900: 'hsla(180,23%,95%,1)',
-      CapsuleRed500: 'hsla(8,86%,56%,1)',
-      CapsuleRed600: 'hsla(8,93%,47%,1)',
-      CapsuleRed800: 'hsla(8,100%,37%,1)',
-      CapsuleWhite000: 'hsla(0,0%,100%,1)',
-      Transparent: 'hsla(0,0%,0%,0.001)',
+      ...mintDark,
+      ...orangeDark,
+      ...plumDark,
+      ...purpleDark,
+      ...redDark,
+      ...slateDark,
+      transparent: 'hsla(0,0%,0%,0.001)',
     },
     space: {
       // used for margins + paddings + grid gaps
