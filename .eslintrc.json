@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:unicorn/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-unused-vars": "error",
+    "react/react-in-jsx-scope": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/prevent-abbreviations": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{js,jsx}"],
+      "rules": {
+        "unicorn/prefer-module": "off"
+      }
+    }
+  ]
+}
