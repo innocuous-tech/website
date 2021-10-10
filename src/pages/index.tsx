@@ -32,6 +32,8 @@ export default function Home() {
         <Box as="h1" css={{ textAlign: 'center', my: '$12', fontWeight: '$bold' }}>
           Innocuous Tech
         </Box>
+
+        <Box>This website is under construction!</Box>
       </Container>
     </Box>
   );
