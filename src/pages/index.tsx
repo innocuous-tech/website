@@ -28,8 +28,11 @@ export default function Home() {
         <title>Innocuous Tech</title>
       </Head>
 
-      <Container size={{ '@initial': '1', '@aboveMedium': '2', '@aboveLarge': 3 }}>
-        <Box as="h1" css={{ textAlign: 'center', my: '$12', fontWeight: '$bold' }}>
+      <Container
+        css={{ textAlign: 'center' }}
+        size={{ '@initial': '1', '@aboveMedium': '2', '@aboveLarge': 3 }}
+      >
+        <Box as="h1" css={{ my: '$12', fontWeight: '$bold' }}>
           Innocuous Tech
         </Box>
 
