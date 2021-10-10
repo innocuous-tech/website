@@ -1,7 +1,7 @@
 const withPlugins = require('next-compose-plugins');
 const withTranspiledModules = require('next-transpile-modules')(['lodash-es']);
 
-const plugins = [];
+const plugins = [withTranspiledModules];
 
 /**
  * @type {import('next').NextConfig}

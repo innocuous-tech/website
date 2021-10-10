@@ -1,26 +1,28 @@
 import type * as Stitches from '@stitches/react';
 import { createStitches, CSS as StitchesCSS } from '@stitches/react';
+import { mintDark, orangeDark, plumDark, purpleDark, redDark, slateDark } from '@radix-ui/colors';
+
+const brandBlue = {
+  blue500: 'hsl(194, 60%, 65%)',
+  blue400: 'hsl(200, 64%, 58%)',
+  blue300: 'hsl(209, 55%, 50%)',
+  blue200: 'hsl(215, 58%, 36%)',
+  blue100: 'hsl(213, 32%, 17%)',
+};
+
+// gradient is from 500 to 300
 
 export const { config, createTheme, css, getCssText, globalCss, styled, theme } = createStitches({
   theme: {
     colors: {
-      BrandGreen: 'hsla(175,22%,55%,1)',
-      BrandYellow: 'hsla(50,100%,50%,1)',
-      CapsuleBlue500: 'hsla(211, 76%, 24%, 1)',
-      CapsuleBlue900: 'hsla(215, 53%, 23%, 1)',
-      CapsuleGray100: 'hsla(210,8%,80%,1)',
-      CapsuleGray300: 'hsla(218,11%,61%,1)',
-      CapsuleGray500: 'hsla(212,8%,47%,1)',
-      CapsuleGreen000: 'hsla(180,23%,95%,1)',
-      CapsuleGreen100: 'hsla(171,25%,90%,1)',
-      CapsuleGreen500: 'hsla(175,23%,67%,1)',
-      CapsuleGreen600: 'hsla(172,100%,26%,1)',
-      CapsuleGreen900: 'hsla(180,23%,95%,1)',
-      CapsuleRed500: 'hsla(8,86%,56%,1)',
-      CapsuleRed600: 'hsla(8,93%,47%,1)',
-      CapsuleRed800: 'hsla(8,100%,37%,1)',
-      CapsuleWhite000: 'hsla(0,0%,100%,1)',
-      Transparent: 'hsla(0,0%,0%,0.001)',
+      ...brandBlue,
+      ...mintDark,
+      ...orangeDark,
+      ...plumDark,
+      ...purpleDark,
+      ...redDark,
+      ...slateDark,
+      transparent: 'hsla(0,0%,0%,0.001)',
     },
     space: {
       // used for margins + paddings + grid gaps
@@ -35,37 +37,37 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
       96: '96px',
       128: '128px',
     },
-    fontSizes: {
-      12: '12px',
-      13: '13px',
-      15: '15px',
-      16: '16px',
-      20: '20px',
-      24: '24px',
-      28: '28px',
-      36: '36px',
-      48: '48px',
-      60: '60px',
-      84: '84px',
-    },
+    // fontSizes: {
+    //   12: '12px',
+    //   13: '13px',
+    //   15: '15px',
+    //   16: '16px',
+    //   20: '20px',
+    //   24: '24px',
+    //   28: '28px',
+    //   36: '36px',
+    //   48: '48px',
+    //   60: '60px',
+    //   84: '84px',
+    // },
     fontWeights: {
-      normal: 400,
-      bold: 700,
+      regular: 400,
+      semiBold: 600,
+      bold: 900,
     },
     fonts: {
-      circular: 'Circular-Pro, Helvetica, Arial, sans-serif',
-      mercury: 'MercuryTextG4, Georgia, Times New Roman, serif',
+      montserrat: 'Montserrat, sans-serif',
     },
-    lineHeights: {
-      16: '16px',
-      20: '20px',
-      24: '24px',
-      28: '28px',
-      32: '32px',
-      44: '44px',
-      72: '72px',
-      92: '92px',
-    },
+    // lineHeights: {
+    //   16: '16px',
+    //   20: '20px',
+    //   24: '24px',
+    //   28: '28px',
+    //   32: '32px',
+    //   44: '44px',
+    //   72: '72px',
+    //   92: '92px',
+    // },
     radii: {
       circle: '50%',
       pill: '999px',

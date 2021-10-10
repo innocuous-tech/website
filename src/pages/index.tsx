@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { styled } from '~/stitches.config';
-import { Text } from '~/components/Primitives/Text';
 import { Box } from '~/components/Primitives/Box';
 
 const Container = styled('div', {
@@ -30,9 +29,9 @@ export default function Home() {
       </Head>
 
       <Container size={{ '@initial': '1', '@aboveMedium': '2', '@aboveLarge': 3 }}>
-        <Text as="h1" variant="displayXxxl" css={{ my: '$12' }}>
+        <Box as="h1" css={{ textAlign: 'center', my: '$12', fontWeight: '$bold' }}>
           Innocuous Tech
-        </Text>
+        </Box>
       </Container>
     </Box>
   );
