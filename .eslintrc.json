@@ -1,12 +1,16 @@
 {
+  "plugins": ["@typescript-eslint/eslint-plugin"],
   "extends": [
     "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:unicorn/recommended",
     "prettier"
   ],
   "rules": {
-    "no-unused-vars": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/react-in-jsx-scope": "off",
     "unicorn/filename-case": "off",
     "unicorn/prevent-abbreviations": "off"
@@ -16,6 +20,12 @@
       "files": ["**/*.{js,jsx}"],
       "rules": {
         "unicorn/prefer-module": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.{js,jsx,ts,tsx}"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
       }
     }
   ]

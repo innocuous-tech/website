@@ -9,22 +9,23 @@
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.7",
-    "@stitches/react": "^1.0.0",
-    "next": "latest",
+    "@stitches/react": "^1.2.5",
+    "next": "^11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/node": "^14",
-    "@types/react": "^17.0.27",
-    "eslint": "8.0.0",
+    "@types/node": "^16.11.5",
+    "@types/react": "^17.0.32",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "eslint": "^8.1.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-react": "^7.26.0",
-    "eslint-plugin-unicorn": "^36.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-unicorn": "^37.0.1",
     "lodash-es": "^4.17.21",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^8.0.0",
-    "typescript": "4.3.5"
+    "typescript": "4.4.4"
   }
 }
