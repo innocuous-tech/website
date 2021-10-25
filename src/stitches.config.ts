@@ -1,27 +1,38 @@
 import type * as Stitches from '@stitches/react';
 import { createStitches, CSS as StitchesCSS } from '@stitches/react';
-import { mintDark, orangeDark, plumDark, purpleDark, redDark, slateDark } from '@radix-ui/colors';
+import {
+  cyan,
+  plum,
+  mint,
+  amber,
+  red,
+  cyanDark,
+  plumDark,
+  mintDark,
+  amberDark,
+  redDark,
+  slate,
+  slateDark,
+} from '@radix-ui/colors';
 
 const brandBlue = {
-  blue500: 'hsl(194, 60%, 65%)',
-  blue400: 'hsl(200, 64%, 58%)',
-  blue300: 'hsl(209, 55%, 50%)',
-  blue200: 'hsl(215, 58%, 36%)',
-  blue100: 'hsl(213, 32%, 17%)',
+  brandLightest: 'hsla(194, 60%, 65%, 100)',
+  brandLight: 'hsla(200, 64%, 58%, 100)',
+  brand: 'hsla(209, 55%, 50%, 100)',
+  brandDark: 'hsla(215, 58%, 36%, 100)',
+  brandDarkest: 'hsla(213, 32%, 17%, 100)',
 };
-
-// gradient is from 500 to 300
 
 export const { config, createTheme, css, getCssText, globalCss, styled, theme } = createStitches({
   theme: {
     colors: {
       ...brandBlue,
-      ...mintDark,
-      ...orangeDark,
-      ...plumDark,
-      ...purpleDark,
-      ...redDark,
-      ...slateDark,
+      ...cyan,
+      ...plum,
+      ...mint,
+      ...amber,
+      ...red,
+      ...slate,
       transparent: 'hsla(0,0%,0%,0.001)',
     },
     space: {
@@ -37,37 +48,14 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
       96: '96px',
       128: '128px',
     },
-    // fontSizes: {
-    //   12: '12px',
-    //   13: '13px',
-    //   15: '15px',
-    //   16: '16px',
-    //   20: '20px',
-    //   24: '24px',
-    //   28: '28px',
-    //   36: '36px',
-    //   48: '48px',
-    //   60: '60px',
-    //   84: '84px',
-    // },
     fontWeights: {
       regular: 400,
       semiBold: 600,
       bold: 900,
     },
     fonts: {
-      montserrat: 'Montserrat, sans-serif',
+      montserrat: 'Montserrat, Arial, sans-serif',
     },
-    // lineHeights: {
-    //   16: '16px',
-    //   20: '20px',
-    //   24: '24px',
-    //   28: '28px',
-    //   32: '32px',
-    //   44: '44px',
-    //   72: '72px',
-    //   92: '92px',
-    // },
     radii: {
       circle: '50%',
       pill: '999px',
@@ -114,6 +102,19 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
 });
 
 export type ThemeSafeCSS = StitchesCSS<typeof config>;
+
+export const darkTheme = createTheme('dark-theme', {
+  colors: {
+    ...brandBlue,
+    ...cyanDark,
+    ...plumDark,
+    ...mintDark,
+    ...amberDark,
+    ...redDark,
+    ...slateDark,
+    transparent: 'hsla(0,0%,0%,0.001)',
+  },
+});
 
 export const globalCSSReset = globalCss({
   html: {
