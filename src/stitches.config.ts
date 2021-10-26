@@ -25,6 +25,9 @@ const brandBlue = {
 
 export const { config, createTheme, css, getCssText, globalCss, styled, theme } = createStitches({
   theme: {
+    fontSizes: {
+      USE_TEXT_COMPONENT: 0, // we use capsize, so you must use the Text component to dictate font-size.
+    },
     colors: {
       ...brandBlue,
       ...cyan,
@@ -86,6 +89,11 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
     minH: (value: Stitches.PropertyValue<'minHeight'>) => ({ minHeight: value }),
     maxH: (value: Stitches.PropertyValue<'maxHeight'>) => ({ maxHeight: value }),
     br: (value: Stitches.PropertyValue<'borderRadius'>) => ({ borderRadius: value }),
+    ellipsis: (value: 'default' | 'truncate') => ({
+      whiteSpace: value === 'truncate' ? 'nowrap' : 'normal',
+      overflow: value === 'truncate' ? 'hidden' : 'visible',
+      textOverflow: value === 'truncate' ? 'ellipsis' : 'clip',
+    }),
   },
   media: {
     aboveXXL: '(min-width: 1280px)',
@@ -122,7 +130,7 @@ export const globalCSSReset = globalCss({
     '-webkit-text-size-adjust': '100%',
   },
   body: {
-    margin: 0,
+    m: 0,
   },
   main: {
     display: 'block',
@@ -148,7 +156,7 @@ export const globalCSSReset = globalCss({
     textDecoration: 'underline dotted',
   },
   'b, strong': {
-    fontWeight: 'bolder',
+    fontWeight: 600,
   },
   'code, kbd, samp': {
     fontFamily: 'monospace, monospace',

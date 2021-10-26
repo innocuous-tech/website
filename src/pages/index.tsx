@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { styled } from '~/stitches.config';
 import { Box } from '~/components/Primitives/Box';
+import { Text } from '~/components/Primitives/Text';
 
 const Container = styled('div', {
   mx: 'auto',
@@ -32,11 +33,17 @@ export default function Home() {
         css={{ textAlign: 'center' }}
         size={{ '@initial': '1', '@aboveMedium': '2', '@aboveLarge': 3 }}
       >
-        <Box as="h1" css={{ my: '$12', fontWeight: '$bold' }}>
+        <Text
+          as="h1"
+          size={{ '@aboveLarge': '72', '@belowLarge': '48' }}
+          css={{ fontWeight: '$bold', '@aboveLarge': { my: '$24' }, '@belowLarge': { my: '$48' } }}
+        >
           Innocuous Tech
-        </Box>
+        </Text>
 
-        <Box>This website is under construction!</Box>
+        <Text as="p" size="24">
+          This website is under construction!
+        </Text>
       </Container>
     </Box>
   );
