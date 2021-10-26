@@ -49,7 +49,7 @@ export const Text = styled('span', {
       },
       '24': {
         ...generateTextStyles(24, 18),
-        fontWeight: theme.fontWeights.regular,
+        fontWeight: theme.fontWeights.semiBold,
       },
       '32': {
         ...generateTextStyles(32, 24),
@@ -58,7 +58,7 @@ export const Text = styled('span', {
       '48': {
         ...generateTextStyles(48, 32),
         letterSpacing: '-1px',
-        fontWeight: theme.fontWeights.semiBold,
+        fontWeight: theme.fontWeights.bold,
       },
       '72': {
         ...generateTextStyles(72, 48),

@@ -36,13 +36,17 @@ export default function Home() {
         <Text
           as="h1"
           size={{ '@aboveLarge': '72', '@belowLarge': '48' }}
-          css={{ fontWeight: '$bold', '@aboveLarge': { my: '$24' }, '@belowLarge': { my: '$48' } }}
+          css={{
+            fontWeight: '$bold',
+            '@aboveLarge': { my: '$24' },
+            '@belowLarge': { my: '$48' },
+          }}
         >
           Innocuous Tech
         </Text>
 
         <Text as="p" size="24">
-          This website is under construction!
+          This website is under construction.
         </Text>
       </Container>
     </Box>
