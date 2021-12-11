@@ -1,5 +1,5 @@
 {
-  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "lodash"],
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
@@ -7,9 +7,11 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:unicorn/recommended",
+    "plugin:lodash/recommended",
     "prettier"
   ],
   "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-interface": ["error", { "allowSingleExtends": true }],
     "@typescript-eslint/no-unused-vars": "error",
