@@ -1,4 +1,4 @@
-import type { AppProps, AppContext } from 'next/app';
+import type { AppProps /* AppContext */ } from 'next/app';
 import { globalCSSReset, globalStyles } from '~/stitches.config';
 
 /**

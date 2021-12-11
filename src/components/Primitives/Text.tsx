@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 import { createStyleObject, FontMetrics } from '@capsizecss/core';
-import { css, styled, theme } from '~/stitches.config';
+import { styled, theme } from '~/stitches.config';
 
 const montserratFontMetrics: FontMetrics = {
   capHeight: 700,
