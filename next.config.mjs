@@ -7,6 +7,8 @@ const plugins = [];
 /**
  * @type {import('next').NextConfig}
  */
-const nextConfig = {};
+const nextConfig = {
+  swcMinify: true,
+};
 
 export default withPlugins(plugins, nextConfig);
