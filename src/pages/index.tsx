@@ -3,52 +3,112 @@ import { styled } from '~/stitches.config';
 import { Box } from '~/components/Primitives/Box';
 import { Text } from '~/components/Primitives/Text';
 
-const Container = styled('div', {
-  mx: 'auto',
-  px: '$16',
+// const Main = styled('main', {
+//   textAlign: 'center',
+// });
 
-  variants: {
-    size: {
-      1: {
-        maxW: '300px',
-      },
-      2: {
-        maxW: '585px',
-      },
-      3: {
-        maxW: '865px',
-      },
-    },
-  },
+const Header = styled('header', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  // height: 'max(200px, 50vh)',
+  height: '100vh',
+  backgroundColor: '$brandDarkest',
 });
 
+// const Footer = styled('footer', {
+//   textAlign: 'center',
+// });
+
 export default function Home() {
+  // const today = new Date();
+  // const currentYear = today.getFullYear();
+  // const copyRightStartYear = 2021;
+
+  // const copyrightText = currentYear === copyRightStartYear ? `© 2021` : `© 2021-${currentYear}`;
+
   return (
-    <Box css={{ py: '$16' }}>
+    <>
       <Head>
         <title>Innocuous Tech</title>
       </Head>
 
-      <Container
-        css={{ textAlign: 'center' }}
-        size={{ '@initial': '1', '@aboveMedium': '2', '@aboveLarge': 3 }}
-      >
-        <Text
-          as="h1"
-          size={{ '@aboveLarge': '72', '@belowLarge': '48' }}
+      <Header>
+        <Box
           css={{
-            fontWeight: '$bold',
-            '@aboveLarge': { my: '$24' },
-            '@belowLarge': { my: '$48' },
+            display: 'flex',
+            alignItems: 'center',
+            borderBottomColor: '$cyan3',
+            borderBottomWidth: '2px',
+            borderBottomStyle: 'solid',
+
+            '@belowMedium': {
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              pb: '$24',
+            },
           }}
         >
-          Innocuous Tech
+          <Box as="img" src="/logo.png" alt="" css={{ height: '200px', m: '$12' }} />
+
+          <Box>
+            <Text
+              as="h1"
+              size={{ '@aboveMedium': '72', '@belowMedium': '48', '@belowSmall': '32' }}
+              css={{ color: '$cyan3', mb: '$24' }}
+            >
+              Innocuous Tech
+            </Text>
+
+            <Text
+              as="p"
+              size={{ '@aboveMedium': '32', '@belowMedium': '24', '@belowSmall': '18' }}
+              css={{ color: '$brandLightest' }}
+            >
+              We write harmless code.
+            </Text>
+          </Box>
+        </Box>
+
+        <Text
+          as="p"
+          size={{ '@aboveMedium': 24, '@belowMedium': 18, '@belowSmall': 16 }}
+          css={{
+            color: '$cyan3',
+            pt: '$24',
+            textAlign: 'center',
+
+            '@aboveSmall': {
+              pt: '$48',
+            },
+          }}
+        >
+          Obviously, this site is a work in progress...
+          <br />
+          Thanks for your patience!
+        </Text>
+      </Header>
+
+      {/* <Main>
+        <Text as="p" size="24">
+          Look at all them clients:
         </Text>
 
-        <Text as="p" size="24">
-          This website is under construction.
-        </Text>
-      </Container>
-    </Box>
+        <Box as="ul" css={{ listStyle: 'none' }}>
+          <Text as="li" size="18">
+            Nobody
+          </Text>
+          <Text as="li" size="18">
+            Nobody
+          </Text>
+          <Text as="li" size="18">
+            Nobody
+          </Text>
+        </Box>
+      </Main>
+
+      <Footer>Innocuous Tech {copyrightText}</Footer> */}
+    </>
   );
 }
