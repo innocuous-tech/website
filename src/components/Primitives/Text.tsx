@@ -29,7 +29,7 @@ export const Text = styled('span', {
   m: 0,
   boxSizing: 'border-box',
   fontFamily: theme.fonts.montserrat,
-  color: theme.colors.slate12,
+  color: 'currentColor',
 
   variants: {
     size: {

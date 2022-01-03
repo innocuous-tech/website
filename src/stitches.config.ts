@@ -62,7 +62,10 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
     radii: {
       circle: '50%',
       pill: '999px',
-      small: '3px',
+      smol: '6px',
+    },
+    transitions: {
+      basic: 'all 200ms linear',
     },
   },
   utils: {

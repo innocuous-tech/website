@@ -76,11 +76,11 @@ export default function Home() {
           size={{ '@aboveMedium': 24, '@belowMedium': 18, '@belowSmall': 16 }}
           css={{
             color: '$cyan3',
-            pt: '$24',
+            my: '$24',
             textAlign: 'center',
 
             '@aboveSmall': {
-              pt: '$48',
+              my: '$48',
             },
           }}
         >
