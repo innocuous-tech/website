@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { styled } from '~/stitches.config';
-import { Box } from '~/components/Primitives/Box';
+import { Base } from '~/components/Primitives/Thing';
 import { Text } from '~/components/Primitives/Text';
 
 // const Main = styled('main', {
@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
 
       <Header>
-        <Box
+        <Base
           css={{
             display: 'flex',
             alignItems: 'center',
@@ -50,9 +50,9 @@ export default function Home() {
             },
           }}
         >
-          <Box as="img" src="/logo.png" alt="" css={{ height: '200px', m: '$12' }} />
+          <Base as="img" src="/logo.png" alt="" css={{ height: '200px', m: '$12' }} />
 
-          <Box>
+          <Base>
             <Text
               as="h1"
               size={{ '@aboveMedium': '72', '@belowMedium': '48', '@belowSmall': '32' }}
@@ -68,8 +68,8 @@ export default function Home() {
             >
               We write harmless code.
             </Text>
-          </Box>
-        </Box>
+          </Base>
+        </Base>
 
         <Text
           as="p"
