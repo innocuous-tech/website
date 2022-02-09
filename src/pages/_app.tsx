@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { globalCSSReset, globalStyles } from '~/stitches.config';
 import { analytics, GA_TRACKING_ID } from '~/utils/analytics';
+import '@christiankaindl/lyts/style.css';
 
 const googleAnalytics = (
   <>

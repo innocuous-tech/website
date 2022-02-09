@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@capsizecss/core': ^3.0.0
+  '@christiankaindl/lyts': ^1.1.0
   '@radix-ui/colors': ^0.1.8
   '@stitches/react': ^1.2.6
   '@types/gtag.js': ^0.0.8
@@ -22,6 +23,7 @@ specifiers:
 
 dependencies:
   '@capsizecss/core': 3.0.0
+  '@christiankaindl/lyts': 1.1.0_react-dom@17.0.2+react@17.0.2
   '@radix-ui/colors': 0.1.8
   '@stitches/react': 1.2.6_react@17.0.2
   next: 12.0.10_react-dom@17.0.2+react@17.0.2
@@ -78,10 +80,21 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
-    dev: true
 
   /@capsizecss/core/3.0.0:
     resolution: {integrity: sha512-tJNEWMmhHcU5z6ITAiVNN9z+PCTylybVIJqgX7Ts4zN66fe/W2Fe5UWJCCZIP/5uutsl5fYOaVVHZIjsuTVhBQ==}
+    dev: false
+
+  /@christiankaindl/lyts/1.1.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-SaamVA1+0kizcr5yvXR//i6Uh/88e4klLmlcxVZEml4kv6NkLxpoEiaTw4BLpTR6RF4Jy1eapZBi8LVbgXQCxw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0
+      react-dom: ^16.8 || ^17.0
+    dependencies:
+      '@radix-ui/react-slot': 0.1.2_react@17.0.2
+      '@vanilla-extract/dynamic': 2.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /@eslint/eslintrc/1.0.5:
@@ -248,6 +261,25 @@ packages:
 
   /@radix-ui/colors/0.1.8:
     resolution: {integrity: sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==}
+    dev: false
+
+  /@radix-ui/react-compose-refs/0.1.0_react@17.0.2:
+    resolution: {integrity: sha512-eyclbh+b77k+69Dk72q3694OHrn9B3QsoIRx7ywX341U9RK1ThgQjMFZoPtmZNQTksXHLNEiefR8hGVeFyInGg==}
+    peerDependencies:
+      react: ^16.8 || ^17.0
+    dependencies:
+      '@babel/runtime': 7.16.7
+      react: 17.0.2
+    dev: false
+
+  /@radix-ui/react-slot/0.1.2_react@17.0.2:
+    resolution: {integrity: sha512-ADkqfL+agEzEguU3yS26jfB50hRrwf7U4VTwAOZEmi/g+ITcBWe12yM46ueS/UCIMI9Py+gFUaAdxgxafFvY2Q==}
+    peerDependencies:
+      react: ^16.8 || ^17.0
+    dependencies:
+      '@babel/runtime': 7.16.7
+      '@radix-ui/react-compose-refs': 0.1.0_react@17.0.2
+      react: 17.0.2
     dev: false
 
   /@rushstack/eslint-patch/1.1.0:
@@ -422,6 +454,16 @@ packages:
       '@typescript-eslint/types': 5.10.2
       eslint-visitor-keys: 3.2.0
     dev: true
+
+  /@vanilla-extract/dynamic/2.0.2:
+    resolution: {integrity: sha512-U4nKaEQ8Kuz+exXEr51DUpyaOuzo24/S/k1YbDPQR06cYcNjQqvwFRnwWtZ+9ImocqM1wTKtzrdUgSTtLGIwAg==}
+    dependencies:
+      '@vanilla-extract/private': 1.0.3
+    dev: false
+
+  /@vanilla-extract/private/1.0.3:
+    resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.7.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1837,7 +1879,6 @@ packages:
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
-    dev: true
 
   /regexp-tree/0.1.24:
     resolution: {integrity: sha512-s2aEVuLhvnVJW6s/iPgEGK6R+/xngd2jNQ+xy4bXNDKxZKJH6jpPHY6kVeVv1IeLCHgswRj+Kl3ELaDjG6V1iw==}
