@@ -1,9 +1,9 @@
-import { Base } from '~/components/Primitives/Thing';
+import { Element } from '~/components/Primitives/Element';
 import { Button } from '~/components/Primitives/Button';
 
 export function KitchenSink() {
   return (
-    <Base
+    <Element
       css={{
         display: 'flex',
         flexDirection: 'column',
@@ -16,6 +16,6 @@ export function KitchenSink() {
       <Button>Primary</Button>
 
       <Button>Secondary</Button>
-    </Base>
+    </Element>
   );
 }
