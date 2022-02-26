@@ -11,29 +11,29 @@ const StyledButton = styled('button', {
   appearance: 'none',
   px: '$16',
   py: '$12',
-  outline: '2px solid',
+  outline: '1px solid',
   outlineColor: theme.colors.transparent,
   border: '2px solid',
-  borderColor: theme.colors.cyan1,
+  borderColor: theme.colors.cyan7,
   br: '$smol',
-  backgroundColor: theme.colors.cyan11,
-  color: theme.colors.cyan1,
+  backgroundColor: theme.colors.cyan3,
+  color: theme.colors.cyan11,
   transition: '$basic',
 
-  '&:hover': {
+  '&:hover, &:focus': {
     cursor: 'pointer',
-    backgroundColor: theme.colors.cyan10,
+    borderColor: theme.colors.cyan8,
     transition: theme.transitions.basic,
   },
 
   '&:focus': {
-    outlineColor: theme.colors.cyan11,
+    outlineColor: theme.colors.cyan8,
     transition: theme.transitions.basic,
   },
 
   '&:active': {
-    backgroundColor: theme.colors.cyan9,
-    outlineColor: theme.colors.cyan9,
+    borderColor: theme.colors.cyan8,
+    outlineColor: theme.colors.cyan8,
   },
 });
 
@@ -41,7 +41,7 @@ export const Button = forwardRef<HTMLButtonElement, ComponentProps<typeof Styled
   ({ children, ...rest }, ref) => {
     return (
       <StyledButton {...rest} ref={ref}>
-        <Text>{children}</Text>
+        <Text css={{ fontWeight: '$semiBold' }}>{children}</Text>
       </StyledButton>
     );
   },
@@ -49,4 +49,4 @@ export const Button = forwardRef<HTMLButtonElement, ComponentProps<typeof Styled
 
 Button.displayName = 'Button';
 
-export interface ButtonProps extends ComponentProps<typeof Button> {}
+export interface ButtonProps extends ComponentProps<typeof StyledButton> {}

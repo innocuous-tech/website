@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import type { AppProps /* AppContext */ } from 'next/app';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { globalCSSReset, globalStyles } from '~/stitches.config';
+import { darkTheme, globalCSSReset, globalStyles } from '~/stitches.config';
 import { analytics, GA_TRACKING_ID } from '~/utils/analytics';
 import '@christiankaindl/lyts/style.css';
+import { ThemeProvider } from 'next-themes';
 
 const googleAnalytics = (
   <>
@@ -49,10 +50,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <>
+    <ThemeProvider
+      disableTransitionOnChange={false}
+      attribute="class"
+      value={{ dark: darkTheme.className, light: 'light-theme' }}
+      defaultTheme="system"
+    >
       {googleAnalytics}
 
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }

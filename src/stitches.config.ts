@@ -23,94 +23,102 @@ const brandBlue = {
   brandDarkest: 'hsla(213, 32%, 17%, 100)',
 };
 
-export const { config, createTheme, css, getCssText, globalCss, styled, theme } = createStitches({
-  theme: {
-    fontSizes: {
-      USE_TEXT_COMPONENT: 0, // we use capsize, so you must use the Text component to dictate font-size.
+export const { config, createTheme, css, getCssText, globalCss, keyframes, styled, theme } =
+  createStitches({
+    theme: {
+      fontSizes: {
+        USE_TEXT_COMPONENT: 0, // we use capsize, so you must use the Text component to dictate font-size.
+      },
+      colors: {
+        ...brandBlue,
+        ...cyan,
+        ...plum,
+        ...mint,
+        ...amber,
+        ...red,
+        ...slate,
+        transparent: 'hsla(0,0%,0%,0.001)',
+      },
+      space: {
+        // used for margins + paddings + grid gaps
+        4: '4px',
+        8: '8px',
+        12: '12px',
+        16: '16px',
+        24: '24px',
+        32: '32px',
+        48: '48px',
+        64: '64px',
+        96: '96px',
+        128: '128px',
+      },
+      fontWeights: {
+        regular: 400,
+        semiBold: 600,
+        bold: 900,
+      },
+      fonts: {
+        montserrat: 'Montserrat, Arial, sans-serif',
+      },
+      radii: {
+        circle: '50%',
+        pill: '999px',
+        smol: '6px',
+      },
+      transitions: {
+        basic: 'all 200ms linear',
+      },
     },
-    colors: {
-      ...brandBlue,
-      ...cyan,
-      ...plum,
-      ...mint,
-      ...amber,
-      ...red,
-      ...slate,
-      transparent: 'hsla(0,0%,0%,0.001)',
+    utils: {
+      // prettier-ignore
+      m: (value: Stitches.PropertyValue<"margin">) => ({ marginLeft: value, marginRight: value, marginTop: value, marginBottom: value, }),
+      mx: (value: Stitches.PropertyValue<'margin'>) => ({ marginLeft: value, marginRight: value }),
+      my: (value: Stitches.PropertyValue<'margin'>) => ({ marginTop: value, marginBottom: value }),
+      mt: (value: Stitches.PropertyValue<'marginTop'>) => ({ marginTop: value }),
+      mr: (value: Stitches.PropertyValue<'marginRight'>) => ({ marginRight: value }),
+      mb: (value: Stitches.PropertyValue<'marginBottom'>) => ({ marginBottom: value }),
+      ml: (value: Stitches.PropertyValue<'marginLeft'>) => ({ marginLeft: value }),
+      // prettier-ignore
+      p: (value: Stitches.PropertyValue<"padding">) => ({ paddingLeft: value, paddingRight: value, paddingTop: value, paddingBottom: value, }),
+      px: (value: Stitches.PropertyValue<'padding'>) => ({
+        paddingLeft: value,
+        paddingRight: value,
+      }),
+      py: (value: Stitches.PropertyValue<'padding'>) => ({
+        paddingTop: value,
+        paddingBottom: value,
+      }),
+      pt: (value: Stitches.PropertyValue<'paddingTop'>) => ({ paddingTop: value }),
+      pr: (value: Stitches.PropertyValue<'paddingRight'>) => ({ paddingRight: value }),
+      pb: (value: Stitches.PropertyValue<'paddingBottom'>) => ({ paddingBottom: value }),
+      pl: (value: Stitches.PropertyValue<'paddingLeft'>) => ({ paddingLeft: value }),
+      w: (value: Stitches.PropertyValue<'width'>) => ({ width: value }),
+      minW: (value: Stitches.PropertyValue<'minWidth'>) => ({ minWidth: value }),
+      maxW: (value: Stitches.PropertyValue<'maxWidth'>) => ({ maxWidth: value }),
+      h: (value: Stitches.PropertyValue<'height'>) => ({ height: value }),
+      minH: (value: Stitches.PropertyValue<'minHeight'>) => ({ minHeight: value }),
+      maxH: (value: Stitches.PropertyValue<'maxHeight'>) => ({ maxHeight: value }),
+      br: (value: Stitches.PropertyValue<'borderRadius'>) => ({ borderRadius: value }),
+      ellipsis: (value: 'default' | 'truncate') => ({
+        whiteSpace: value === 'truncate' ? 'nowrap' : 'normal',
+        overflow: value === 'truncate' ? 'hidden' : 'visible',
+        textOverflow: value === 'truncate' ? 'ellipsis' : 'clip',
+      }),
     },
-    space: {
-      // used for margins + paddings + grid gaps
-      4: '4px',
-      8: '8px',
-      12: '12px',
-      16: '16px',
-      24: '24px',
-      32: '32px',
-      48: '48px',
-      64: '64px',
-      96: '96px',
-      128: '128px',
+    media: {
+      aboveLarge: '(min-width: 992px)',
+      aboveMedium: '(min-width: 768px)',
+      aboveSmall: '(min-width: 576px)',
+      aboveXL: '(min-width: 1200px)',
+      aboveXXL: '(min-width: 1280px)',
+      belowLarge: '(max-width: 991px)',
+      belowMedium: '(max-width: 767px)',
+      belowSmall: '(max-width: 575px)',
+      belowXL: '(max-width: 1199px)',
+      belowXXL: '(max-width: 1279px)',
+      allowAnimation: '(prefers-reduced-motion: no-preference)',
     },
-    fontWeights: {
-      regular: 400,
-      semiBold: 600,
-      bold: 900,
-    },
-    fonts: {
-      montserrat: 'Montserrat, Arial, sans-serif',
-    },
-    radii: {
-      circle: '50%',
-      pill: '999px',
-      smol: '6px',
-    },
-    transitions: {
-      basic: 'all 200ms linear',
-    },
-  },
-  utils: {
-    // prettier-ignore
-    m: (value: Stitches.PropertyValue<"margin">) => ({ marginLeft: value, marginRight: value, marginTop: value, marginBottom: value, }),
-    mx: (value: Stitches.PropertyValue<'margin'>) => ({ marginLeft: value, marginRight: value }),
-    my: (value: Stitches.PropertyValue<'margin'>) => ({ marginTop: value, marginBottom: value }),
-    mt: (value: Stitches.PropertyValue<'marginTop'>) => ({ marginTop: value }),
-    mr: (value: Stitches.PropertyValue<'marginRight'>) => ({ marginRight: value }),
-    mb: (value: Stitches.PropertyValue<'marginBottom'>) => ({ marginBottom: value }),
-    ml: (value: Stitches.PropertyValue<'marginLeft'>) => ({ marginLeft: value }),
-    // prettier-ignore
-    p: (value: Stitches.PropertyValue<"padding">) => ({ paddingLeft: value, paddingRight: value, paddingTop: value, paddingBottom: value, }),
-    px: (value: Stitches.PropertyValue<'padding'>) => ({ paddingLeft: value, paddingRight: value }),
-    py: (value: Stitches.PropertyValue<'padding'>) => ({ paddingTop: value, paddingBottom: value }),
-    pt: (value: Stitches.PropertyValue<'paddingTop'>) => ({ paddingTop: value }),
-    pr: (value: Stitches.PropertyValue<'paddingRight'>) => ({ paddingRight: value }),
-    pb: (value: Stitches.PropertyValue<'paddingBottom'>) => ({ paddingBottom: value }),
-    pl: (value: Stitches.PropertyValue<'paddingLeft'>) => ({ paddingLeft: value }),
-    w: (value: Stitches.PropertyValue<'width'>) => ({ width: value }),
-    minW: (value: Stitches.PropertyValue<'minWidth'>) => ({ minWidth: value }),
-    maxW: (value: Stitches.PropertyValue<'maxWidth'>) => ({ maxWidth: value }),
-    h: (value: Stitches.PropertyValue<'height'>) => ({ height: value }),
-    minH: (value: Stitches.PropertyValue<'minHeight'>) => ({ minHeight: value }),
-    maxH: (value: Stitches.PropertyValue<'maxHeight'>) => ({ maxHeight: value }),
-    br: (value: Stitches.PropertyValue<'borderRadius'>) => ({ borderRadius: value }),
-    ellipsis: (value: 'default' | 'truncate') => ({
-      whiteSpace: value === 'truncate' ? 'nowrap' : 'normal',
-      overflow: value === 'truncate' ? 'hidden' : 'visible',
-      textOverflow: value === 'truncate' ? 'ellipsis' : 'clip',
-    }),
-  },
-  media: {
-    aboveXXL: '(min-width: 1280px)',
-    belowXXL: '(max-width: 1279px)',
-    aboveXL: '(min-width: 1200px)',
-    belowXL: '(max-width: 1199px)',
-    aboveLarge: '(min-width: 992px)',
-    belowLarge: '(max-width: 991px)',
-    aboveMedium: '(min-width: 768px)',
-    belowMedium: '(max-width: 767px)',
-    aboveSmall: '(min-width: 576px)',
-    belowSmall: '(max-width: 575px)',
-  },
-});
+  });
 
 export type ThemeSafeCSS = StitchesCSS<typeof config>;
 
@@ -264,7 +272,8 @@ export const globalStyles = globalCss({
     height: '100%',
   },
   body: {
-    backgroundColor: '$background',
+    backgroundColor: '$cyan1',
+    color: '$cyan11',
     height: '100%',
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
