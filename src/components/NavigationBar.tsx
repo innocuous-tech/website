@@ -67,6 +67,9 @@ const NavBar = styled('nav', {
   '@belowMedium': {
     position: 'fixed',
     w: 'calc(100% - 24px)',
+    top: 0,
+    backgroundColor: '$cyan1',
+    zIndex: 1,
   },
 });
 
@@ -86,22 +89,17 @@ const NavBar = styled('nav', {
 //   </>
 // );
 
-// const overlayShow = keyframes({
-//   '0%': { opacity: 0 },
-//   '100%': { opacity: 1 },
-// });
-
-// const contentShow = keyframes({
-//   '0%': { opacity: 0.5, transform: 'translateX(-100%)' },
-//   '100%': { opacity: 1, transform: 'translateX(0%)' },
-// });
-
 // const Overlay = styled(Dialog.Overlay, {
+//   backgroundColor: '$cyan1',
 //   position: 'fixed',
 //   inset: 0,
+//   opacity: 0,
 
+//   '&[data-state="open"]': {
+//     opacity: 0.9,
+//   },
 //   '@allowAnimation': {
-//     animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+//     transition: '$basic',
 //   },
 // });
 
@@ -110,10 +108,14 @@ const NavBar = styled('nav', {
 //   top: 0,
 //   left: 0,
 //   h: '100vh',
-//   '@allowAnimation': {
-//     animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+//   transform: 'translateX(-100%)',
+
+//   '&[data-state="open"]': {
+//     transform: 'translateX(0%)',
 //   },
-//   '&:focus': { outline: 'none' },
+//   '@allowAnimation': {
+//     transition: '$basic',
+//   },
 // });
 
 export const NavigationBar = () => {
@@ -126,7 +128,7 @@ export const NavigationBar = () => {
         <Dialog.Trigger asChild>
           <IconButton
             assistiveText="Open website navigation"
-            css={{ '@aboveMedium': { display: 'none !important' } }}
+            css={{ '@aboveMedium': { display: 'none' } }}
           >
             <Element as="svg" height="30" width="30" viewBox="0 0 15 15">
               <path

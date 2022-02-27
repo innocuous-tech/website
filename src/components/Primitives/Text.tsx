@@ -33,14 +33,8 @@ export const Text = styled('span', {
 
   variants: {
     size: {
-      '14': {
-        ...generateTextStyles(14, 14),
-        letterSpacing: '2px',
-        fontWeight: theme.fontWeights.regular,
-      },
       '16': {
         ...generateTextStyles(16, 14),
-        letterSpacing: '1px',
         fontWeight: theme.fontWeights.regular,
       },
       '18': {
@@ -66,6 +60,10 @@ export const Text = styled('span', {
         fontWeight: theme.fontWeights.bold,
       },
     },
+  },
+
+  defaultVariants: {
+    size: '16',
   },
 });
 

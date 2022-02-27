@@ -15,9 +15,14 @@ import { Button } from '~/components/Primitives/Button';
 // });
 
 const Footer = styled('footer', {
+  bottom: 0,
+  position: 'fixed',
   py: '$32',
   textAlign: 'center',
+  width: '100%',
 });
+
+const Underlined = styled('span', { textDecoration: 'underline' });
 
 export default function Home() {
   const today = new Date();
@@ -34,40 +39,50 @@ export default function Home() {
 
       <NavigationBar />
 
-      <Element as="main">
-        <Clamp clamp="min(1000px, 90vw)" xAlign="center" yAlign="center" asChild>
-          <Element css={{ height: '80vh' }}>
-            <Element css={{ '& > *': { mb: '$32' } }}>
-              <Text as="h1" css={{ textAlign: 'center', '@belowMedium': { textAlign: 'left' } }}>
-                We&apos;re a{' '}
-                {/**
-                 * TODO: Add Radix Hovercard
-                 * Yes, we're serious. We have a detailed commitment to being carbon neutral and we only work with clients
-                 * who are committed to being accessible.
-                 */}
-                <Text as="span" css={{ display: 'inline', textDecoration: 'underline' }}>
-                  harmless
-                </Text>
-                , digital agency.
-              </Text>
+      <Clamp
+        clamp="min(1000px, 90vw)"
+        xAlign="center"
+        yAlign="center"
+        style={{ marginTop: '30vh' }}
+      >
+        <Element as="main" css={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+          <Text
+            as="h1"
+            size={{ '@aboveLarge': '48', '@belowLarge': '32' }}
+            css={{
+              fontWeight: '$bold',
+              textAlign: 'center',
+              '@belowLarge': {
+                textAlign: 'left',
+              },
+            }}
+          >
+            We&apos;re a{' '}
+            {/**
+             * TODO: Add Radix Hovercard
+             * Yes, we're serious. We have a detailed commitment to being carbon neutral and we only work with clients
+             * who are committed to being accessible.
+             */}
+            <Underlined>harmless</Underlined>, digital agency.
+          </Text>
 
-              <Text as="p" css={{ maxW: '50ch' }}>
-                Let us help you make your website, digitally scale your business, automate
-                processes, or resolve technical debt.
-              </Text>
+          <Element css={{ maxW: '50ch', mx: 'auto' }}>
+            <Text as="p" css={{ mb: '$32' }}>
+              Let us help you make your website, digitally scale your business, automate processes,
+              or resolve technical debt.
+            </Text>
 
-              <Button
-                // @ts-expect-error - "as" prop doesn't surface properly
-                as="a"
-                href="mailto:inbox@kylemh.com?subject=Inquiry for Innoucous Tech&body=I'm interested in working with Innocuous Tech in order to..."
-                css={{ textDecoration: 'none' }}
-              >
-                Contact Us
-              </Button>
-            </Element>
+            <Button
+              // @ts-expect-error - "as" prop doesn't surface properly
+              as="a"
+              href="mailto:inbox@kylemh.com?subject=Inquiry for Innoucous Tech&body=I'm interested in working with Innocuous Tech in order to..."
+              css={{ textDecoration: 'none' }}
+            >
+              Contact Us
+            </Button>
           </Element>
-        </Clamp>
-      </Element>
+        </Element>
+      </Clamp>
 
       {/* <BigLogoSection>
         <Element
