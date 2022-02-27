@@ -35,6 +35,10 @@ export default function Home() {
     <>
       <Head>
         <title>Innocuous Tech</title>
+        <meta
+          name="description"
+          content="Innocuous is digital agency focused on sustainable and ethical software development and design. We specialize in web application design and development using React."
+        />
       </Head>
 
       <NavigationBar />
