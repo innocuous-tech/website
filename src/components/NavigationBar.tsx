@@ -1,5 +1,6 @@
 import { Row } from '@christiankaindl/lyts';
 import Link from 'next/link';
+import Image from 'next/image';
 // import * as Dialog from '@radix-ui/react-dialog';
 import { styled, darkTheme } from '~/stitches.config';
 // import { Button } from '~/components/Primitives/Button';
@@ -14,11 +15,15 @@ const LogoLink = () => (
       <ScreenReaderOnly>Go Home</ScreenReaderOnly>
       <Row>
         <Element
-          as="img"
-          src="/logo.png"
-          alt=""
-          css={{ '@aboveMedium': { w: 100, h: 100 }, '@belowMedium': { w: 80, h: 80 } }}
-        />
+          css={{
+            position: 'relative',
+            w: 100,
+            h: 100,
+            '@belowMedium': { w: 80, h: 80 },
+          }}
+        >
+          <Image src="/logo.png" alt="" priority layout="fill" objectFit="cover" />
+        </Element>
 
         <Text
           as="span"
