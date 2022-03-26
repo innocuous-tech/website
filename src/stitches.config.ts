@@ -265,12 +265,6 @@ export const globalCSSReset = globalCss({
 });
 
 export const globalStyles = globalCss({
-  '#__next': {
-    height: '100%',
-  },
-  html: {
-    height: '100%',
-  },
   body: {
     backgroundColor: '$cyan1',
     color: '$cyan11',

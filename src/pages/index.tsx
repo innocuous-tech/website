@@ -6,14 +6,6 @@ import { Clamp } from '@christiankaindl/lyts';
 import { NavigationBar } from '~/components/NavigationBar';
 import { Button } from '~/components/Primitives/Button';
 
-// const BigLogoSection = styled('div', {
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   flexDirection: 'column',
-//   height: '100vh',
-// });
-
 const Footer = styled('footer', {
   bottom: 0,
   position: 'fixed',
