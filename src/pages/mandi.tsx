@@ -1,21 +1,23 @@
 import Head from 'next/head';
-import { Clamp } from '@christiankaindl/lyts';
+import { Text } from '~/components/Primitives/Text';
+import { Element } from '~/components/Primitives/Element';
+import { useState } from 'react';
+import { Button } from '~/components/Primitives/Button';
 
 export default function Mandi() {
+  const [isVisible, setIsVisible] = useState(false);
+  const makeMessageVisible = () => setIsVisible(true);
+
   return (
     <>
       <Head>
         <meta name="robots" content="noindex" />
       </Head>
 
-      <Clamp
-        clamp="min(1000px, 90vw)"
-        xAlign="center"
-        yAlign="center"
-        style={{ marginTop: '30vh' }}
-      >
-        Yes, Mandi... Kyle likes you and Kyle loves you.
-      </Clamp>
+      <Element as="div" css={{ display: 'grid', placeItems: 'center', h: '100vh' }}>
+        {!isVisible && <Button onClick={makeMessageVisible}>Does Kyle like/love me?</Button>}
+        {isVisible && <Text as="h6">Yes, Mandi... Kyle likes you and Kyle loves you.</Text>}
+      </Element>
     </>
   );
 }
