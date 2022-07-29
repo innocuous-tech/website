@@ -14,7 +14,9 @@ const Footer = styled('footer', {
   width: '100%',
 });
 
-const Underlined = styled('span', { textDecoration: 'underline' });
+const Underlined = styled('span', {
+  textDecoration: 'underline',
+});
 
 export default function Home() {
   const today = new Date();
