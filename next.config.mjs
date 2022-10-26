@@ -3,10 +3,10 @@
  */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
 
   experimental: {
-    browsersListForSwc: true,
+    scrollRestoration: true,
+    nextScriptWorkers: true,
     legacyBrowsers: false,
   },
 };

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import type { AppProps /* AppContext */ } from 'next/app';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 import { darkTheme, globalCSSReset, globalStyles } from '~/stitches.config';
 import { analytics, GA_TRACKING_ID } from '~/utils/analytics';
 import '@christiankaindl/lyts/style.css';
@@ -11,7 +12,7 @@ const googleAnalytics = (
   <>
     {/* Global Site Tag (gtag.js) - Google Analytics */}
     <Script
-      strategy="afterInteractive"
+      strategy="worker"
       src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
     />
 
@@ -19,14 +20,7 @@ const googleAnalytics = (
       id="gtag-init"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
-        __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
+        __html: `function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","${GA_TRACKING_ID}",{page_path:window.location.pathname});`,
       }}
     />
   </>
@@ -50,15 +44,18 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <ThemeProvider
-      disableTransitionOnChange={false}
-      attribute="class"
-      value={{ dark: darkTheme.className, light: 'light-theme' }}
-      defaultTheme="system"
-    >
+    <>
+      <Analytics />
       {googleAnalytics}
 
-      <Component {...pageProps} />
-    </ThemeProvider>
+      <ThemeProvider
+        disableTransitionOnChange={false}
+        attribute="class"
+        value={{ dark: darkTheme.className, light: 'light-theme' }}
+        defaultTheme="system"
+      >
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }

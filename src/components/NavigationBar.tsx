@@ -2,7 +2,7 @@ import { Row } from '@christiankaindl/lyts';
 import Link from 'next/link';
 import Image from 'next/image';
 // import * as Dialog from '@radix-ui/react-dialog';
-import { styled, darkTheme } from '~/stitches.config';
+import { styled, darkTheme, breakpoints } from '~/stitches.config';
 // import { Button } from '~/components/Primitives/Button';
 import { Element } from '~/components/Primitives/Element';
 import { ScreenReaderOnly } from '~/components/Primitives/ScreenReaderOnly';
@@ -11,29 +11,34 @@ import { Text } from '~/components/Primitives/Text';
 
 const LogoLink = () => (
   <Link href="/">
-    <a>
-      <ScreenReaderOnly>Go Home</ScreenReaderOnly>
-      <Row>
-        <Element
-          css={{
-            position: 'relative',
-            w: 100,
-            h: 100,
-            '@belowMedium': { w: 80, h: 80 },
-          }}
-        >
-          <Image src="/logo.png" alt="" priority layout="fill" objectFit="cover" />
-        </Element>
+    <ScreenReaderOnly>Go Home</ScreenReaderOnly>
+    <Row>
+      <Element
+        css={{
+          position: 'relative',
+          w: 100,
+          h: 100,
+          '@belowMedium': { w: 80, h: 80 },
+        }}
+      >
+        {/* layout="fill" objectFit="cover" */}
+        <Image
+          src="/logo.png"
+          alt=""
+          priority
+          fill
+          sizes={`${breakpoints.belowMedium} 80px, 100px`}
+        />
+      </Element>
 
-        <Text
-          as="span"
-          css={{ color: '$brandDarkest', [`.${darkTheme} &`]: { color: '$brandLightest' } }}
-          size={{ '@aboveMedium': '24', '@belowMedium': '18' }}
-        >
-          Innocuous Tech
-        </Text>
-      </Row>
-    </a>
+      <Text
+        as="span"
+        css={{ color: '$brandDarkest', [`.${darkTheme} &`]: { color: '$brandLightest' } }}
+        size={{ '@aboveMedium': '24', '@belowMedium': '18' }}
+      >
+        Innocuous Tech
+      </Text>
+    </Row>
   </Link>
 );
 
@@ -81,15 +86,15 @@ const NavBar = styled('nav', {
 // const navLinks = (
 //   <>
 //     <Link href="/contact" passHref>
-//       <Text as="a">Contact</Text>
+//       <Text>Contact</Text>
 //     </Link>
 
 //     <Link href="/about" passHref>
-//       <Text as="a">About</Text>
+//       <Text>About</Text>
 //     </Link>
 
 //     <Link href="/blog" passHref>
-//       <Text as="a">Blog</Text>
+//       <Text>Blog</Text>
 //     </Link>
 //   </>
 // );

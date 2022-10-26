@@ -23,6 +23,23 @@ const brandBlue = {
   brandDarkest: 'hsla(213, 32%, 17%, 100)',
 };
 
+/**
+ * Only for exported for usage within `next/image` "sizes" prop.
+ */
+export const breakpoints = {
+  aboveLarge: '(min-width: 992px)',
+  aboveMedium: '(min-width: 768px)',
+  aboveSmall: '(min-width: 576px)',
+  aboveXL: '(min-width: 1200px)',
+  aboveXXL: '(min-width: 1280px)',
+  belowLarge: '(max-width: 991px)',
+  belowMedium: '(max-width: 767px)',
+  belowSmall: '(max-width: 575px)',
+  belowXL: '(max-width: 1199px)',
+  belowXXL: '(max-width: 1279px)',
+  allowAnimation: '(prefers-reduced-motion: no-preference)',
+};
+
 export const { config, createTheme, css, getCssText, globalCss, keyframes, styled, theme } =
   createStitches({
     theme: {
@@ -105,19 +122,7 @@ export const { config, createTheme, css, getCssText, globalCss, keyframes, style
         textOverflow: value === 'truncate' ? 'ellipsis' : 'clip',
       }),
     },
-    media: {
-      aboveLarge: '(min-width: 992px)',
-      aboveMedium: '(min-width: 768px)',
-      aboveSmall: '(min-width: 576px)',
-      aboveXL: '(min-width: 1200px)',
-      aboveXXL: '(min-width: 1280px)',
-      belowLarge: '(max-width: 991px)',
-      belowMedium: '(max-width: 767px)',
-      belowSmall: '(max-width: 575px)',
-      belowXL: '(max-width: 1199px)',
-      belowXXL: '(max-width: 1279px)',
-      allowAnimation: '(prefers-reduced-motion: no-preference)',
-    },
+    media: breakpoints,
   });
 
 export type ThemeSafeCSS = StitchesCSS<typeof config>;
