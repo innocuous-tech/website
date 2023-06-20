@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { styled } from '~/stitches.config';
 import { Element } from '~/components/Primitives/Element';
@@ -20,10 +21,11 @@ const Underlined = styled('span', {
 
 export default function Home() {
   const today = new Date();
-  const currentYear = today.getFullYear();
-  const copyRightStartYear = 2021;
-
-  const copyrightText = currentYear === copyRightStartYear ? `© 2021` : `© 2021-${currentYear}`;
+  const [currentYear, setCurrentYear] = useState(today.getFullYear());
+  
+  useEffect(() => {
+    setCurrentYear(today.getFullYear());
+  }, [today]);
 
   return (
     <>
@@ -99,7 +101,7 @@ export default function Home() {
       </BigLogoSection> */}
 
       <Footer>
-        <Text>Innocuous Tech {copyrightText}</Text>
+        <Text>Innocuous Tech © 2021 — {currentYear}</Text>
       </Footer>
     </>
   );
