@@ -45,8 +45,6 @@ export const Button = forwardRef<HTMLButtonElement, ComponentProps<typeof Styled
       </StyledButton>
     );
   },
-);
+) as typeof StyledButton;
 
 Button.displayName = 'Button';
-
-export interface ButtonProps extends ComponentProps<typeof StyledButton> {}
