@@ -75,7 +75,7 @@ export default function Home() {
             <Button
               // @ts-expect-error - "as" prop doesn't surface properly
               as="a"
-              href="mailto:inbox@kylemh.com?subject=Inquiry for Innoucous Tech&body=I'm interested in working with Innocuous Tech in order to..."
+              href="mailto:x@innocuous.tech?subject=Inquiry for Innoucous Tech&body=I'm interested in working with Innocuous Tech in order to..."
               css={{ textDecoration: 'none' }}
             >
               Contact Us
